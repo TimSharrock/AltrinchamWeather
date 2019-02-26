@@ -156,6 +156,7 @@
     <ClInclude Include="CsvReader.h" />
     <ClInclude Include="DayAndValue.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="FrostStatistics.h" />
     <ClInclude Include="MetOfficeTimeSeries.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>

@@ -30,6 +30,9 @@
     <ClInclude Include="MetOfficeTimeSeries.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FrostStatistics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

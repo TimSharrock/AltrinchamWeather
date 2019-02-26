@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "../WeatherLib/MetOfficeTimeSeries.h"
+#include "../WeatherLib/FrostStatistics.h"
 
 
 int main()
@@ -15,12 +16,21 @@ int main()
 	std::ifstream minimumTemperatureStream{timeSeriesFolder+minimumTemperatureCsv};
     TjsWeather::MetOfficeTimeSeries minimumSeries;
 	minimumSeries.load(minimumTemperatureStream,377020,387175);
-    std::cout << "Minimum temperature records found: " << minimumSeries.size() << "\n\n";
+    std::cout << "Minimum temperature records found: " << minimumSeries.size() << "\n";
+
 	std::ofstream outputStream("E:\\Tim\\Documents\\weather\\statisticsOne.txt");
-	minimumSeries.printStatistics(outputStream);
+	TjsWeather::printFrostStatistics(minimumSeries.begin(),minimumSeries.end(), outputStream);
+	std::cout << "Frost Statistics Processed.\n\n";
+
+	std::string maximumTemperatureCsv{"\\maximum-temperature\\ukcp09_gridded-land-obs-daily_timeseries_maximum-temperature_350000E_350000N_19600101-20161231.csv"};
+	std::ifstream maximumTemperatureStream{timeSeriesFolder+maximumTemperatureCsv};
+    TjsWeather::MetOfficeTimeSeries maximumSeries;
+	maximumSeries.load(maximumTemperatureStream,377020,387175);
+    std::cout << "Maximum temperature records found: " << maximumSeries.size() << "\n\n";
+
     std::cout << "Farewell Weather World!\n";
 
-}
+ }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
