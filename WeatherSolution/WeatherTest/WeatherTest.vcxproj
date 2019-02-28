@@ -38,6 +38,7 @@
   <ItemGroup>
     <ClCompile Include="CsvReaderTests.cpp" />
     <ClCompile Include="DayAndValueTests.cpp" />
+    <ClCompile Include="DegreeDayCalculatorTest.cpp" />
     <ClCompile Include="MetOfficeTimeSeriesTests.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
