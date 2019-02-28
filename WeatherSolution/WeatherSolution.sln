@@ -5,12 +5,12 @@ VisualStudioVersion = 16.0.28527.54
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherLib", "WeatherLib\WeatherLib.vcxproj", "{FFB56EBD-CF31-4536-A4FE-D1BF17C18507}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherTest", "WeatherTest\WeatherTest.vcxproj", "{F4EB5876-6165-41C9-BAED-B944FCF83AD1}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherStatisticsOne", "WeatherStatisticsOne\WeatherStatisticsOne.vcxproj", "{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507} = {FFB56EBD-CF31-4536-A4FE-D1BF17C18507}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherTest", "WeatherTest\WeatherTest.vcxproj", "{C83329B8-1DB8-417D-8E73-055FC09CC342}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +28,6 @@ Global
 		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507}.Release|x64.Build.0 = Release|x64
 		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507}.Release|x86.ActiveCfg = Release|Win32
 		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507}.Release|x86.Build.0 = Release|Win32
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Debug|x64.ActiveCfg = Debug|x64
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Debug|x64.Build.0 = Debug|x64
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Debug|x86.ActiveCfg = Debug|Win32
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Debug|x86.Build.0 = Debug|Win32
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Release|x64.ActiveCfg = Release|x64
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Release|x64.Build.0 = Release|x64
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Release|x86.ActiveCfg = Release|Win32
-		{F4EB5876-6165-41C9-BAED-B944FCF83AD1}.Release|x86.Build.0 = Release|Win32
 		{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}.Debug|x64.ActiveCfg = Debug|x64
 		{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}.Debug|x64.Build.0 = Debug|x64
 		{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}.Debug|x86.ActiveCfg = Debug|Win32
@@ -44,6 +36,14 @@ Global
 		{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}.Release|x64.Build.0 = Release|x64
 		{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}.Release|x86.ActiveCfg = Release|Win32
 		{AE7BDC5A-6BF2-46D5-979A-1572207BB4F3}.Release|x86.Build.0 = Release|Win32
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Debug|x64.ActiveCfg = Debug|x64
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Debug|x64.Build.0 = Debug|x64
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Debug|x86.ActiveCfg = Debug|Win32
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Debug|x86.Build.0 = Debug|Win32
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x64.ActiveCfg = Release|x64
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x64.Build.0 = Release|x64
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x86.ActiveCfg = Release|Win32
+		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
