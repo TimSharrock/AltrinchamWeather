@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "../WeatherLib/MetOfficeTimeSeries.h"
 #include "../WeatherLib/DegreeDayCalculator.h"
+#include "../WeatherLib/YearAndMonthBuckets.h"
+#include "../WeatherLib/WeatherAlgorithms.h"
 
 TEST(MetOfficeTimeSeriesTests, defaultConstructed)
 {
@@ -75,4 +77,13 @@ TEST_F(LittleTimeSeriesTest, CombiningProducesSameLengthAsInputAndPlausibleResul
 	EXPECT_EQ(seriesA.size(),combined.size());
 	EXPECT_EQ(seriesA.begin()->date(),combined.begin()->date());
 	EXPECT_EQ(TjsWeather::GrowingDegreeDays(seriesA.begin()->value(),seriesB.begin()->value()),combined.begin()->value());
+}
+
+TEST_F(LittleTimeSeriesTest, CanAccumulateIntoMonthBuckets)
+{
+    TjsWeather::MetOfficeTimeSeries seriesA;
+	seriesA.load(csvStream,17400,37900);
+	TjsWeather::YearAndMonthBuckets buckets;
+	TjsWeather::accumulate(buckets,seriesA);
+	EXPECT_EQ(8.30+2.08,buckets.value(date::year(1960),date::January));
 }

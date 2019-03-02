@@ -6,6 +6,8 @@
 #include "../WeatherLib/MetOfficeTimeSeries.h"
 #include "../WeatherLib/FrostStatistics.h"
 #include "../WeatherLib/DegreeDayCalculator.h"
+#include "../WeatherLib/YearAndMonthBuckets.h"
+#include "../WeatherLib/WeatherAlgorithms.h"
 
 
 int main()
@@ -31,7 +33,10 @@ int main()
 
     TjsWeather::MetOfficeTimeSeries growingDegreeDaysSeries(minimumSeries,maximumSeries,TjsWeather::GrowingDegreeDays);
     std::cout << "GrowingDegreeDaysCalculated: " << growingDegreeDaysSeries.size() << "\n\n";
-
+	TjsWeather::YearAndMonthBuckets growingDegreeDaysByMonth;
+	TjsWeather::accumulate(growingDegreeDaysByMonth,growingDegreeDaysSeries);	
+	std::ofstream degreeDaysByMonthOutputStream("E:\\Tim\\Documents\\weather\\degreeDaysByMonth.txt");
+	TjsWeather::printBuckets(growingDegreeDaysByMonth,"Year", degreeDaysByMonthOutputStream);
 
 
     std::cout << "Farewell Weather World!\n";
