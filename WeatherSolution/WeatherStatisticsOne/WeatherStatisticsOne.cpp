@@ -5,6 +5,7 @@
 #include <fstream>
 #include "../WeatherLib/MetOfficeTimeSeries.h"
 #include "../WeatherLib/FrostStatistics.h"
+#include "../WeatherLib/DegreeDayCalculator.h"
 
 
 int main()
@@ -27,6 +28,11 @@ int main()
     TjsWeather::MetOfficeTimeSeries maximumSeries;
 	maximumSeries.load(maximumTemperatureStream,377020,387175);
     std::cout << "Maximum temperature records found: " << maximumSeries.size() << "\n\n";
+
+    TjsWeather::MetOfficeTimeSeries growingDegreeDaysSeries(minimumSeries,maximumSeries,TjsWeather::GrowingDegreeDays);
+    std::cout << "GrowingDegreeDaysCalculated: " << growingDegreeDaysSeries.size() << "\n\n";
+
+
 
     std::cout << "Farewell Weather World!\n";
 

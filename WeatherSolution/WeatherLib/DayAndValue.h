@@ -9,6 +9,7 @@ namespace TjsWeather
 	class DayAndValue
 	{
 	public:
+		DayAndValue(date::year_month_day const& aDate, double aValue);
 		DayAndValue(std::string const& dateAsString, std::string const& valueAsString);
 		date::year year() const;
 		date::month month() const;

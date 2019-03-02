@@ -2,7 +2,7 @@
 #include "DegreeDayCalculator.h"
 #include <algorithm>
 
-double TjsWeather::DegreeDayCalculator::operator()(double aValue, double anotherValue)
+double TjsWeather::DegreeDayCalculator::operator()(double aValue, double anotherValue) const
 {
 	auto const maxValue{std::max(aValue,anotherValue)};
 	auto const minValue{std::min(aValue,anotherValue)};

@@ -3,6 +3,11 @@
 #include <sstream>
 
 
+TjsWeather::DayAndValue::DayAndValue(date::year_month_day const& aDate, double aValue)
+	:myDate(aDate),myValue(aValue)
+{
+}
+
 TjsWeather::DayAndValue::DayAndValue(std::string const& dateAsString, std::string const& valueAsString)
 {
 	std::istringstream dateStream(dateAsString);
