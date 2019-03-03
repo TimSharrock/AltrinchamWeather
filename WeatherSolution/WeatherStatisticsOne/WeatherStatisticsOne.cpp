@@ -13,6 +13,9 @@
 int main()
 {
     std::cout << "Hello Weather World!\n";
+
+	try
+	{
 	std::string timeSeriesFolder{"E:\\Tim\\Documents\\weather\\MetOffice\\TimeSeries"};
 	std::string minimumTemperatureCsv{"\\minimum-temperature\\ukcp09_gridded-land-obs-daily_timeseries_minimum-temperature_350000E_350000N_19600101-20161231.csv"};
 
@@ -29,15 +32,37 @@ int main()
 	std::ifstream maximumTemperatureStream{timeSeriesFolder+maximumTemperatureCsv};
     TjsWeather::MetOfficeTimeSeries maximumSeries;
 	maximumSeries.load(maximumTemperatureStream,377020,387175);
-    std::cout << "Maximum temperature records found: " << maximumSeries.size() << "\n\n";
+    std::cout << "Maximum temperature records found: " << maximumSeries.size() << "\n";
 
     TjsWeather::MetOfficeTimeSeries growingDegreeDaysSeries(minimumSeries,maximumSeries,TjsWeather::GrowingDegreeDays);
-    std::cout << "GrowingDegreeDaysCalculated: " << growingDegreeDaysSeries.size() << "\n\n";
 	TjsWeather::YearAndMonthBuckets growingDegreeDaysByMonth;
 	TjsWeather::accumulate(growingDegreeDaysByMonth,growingDegreeDaysSeries);	
 	std::ofstream degreeDaysByMonthOutputStream("E:\\Tim\\Documents\\weather\\degreeDaysByMonth.txt");
 	TjsWeather::printBuckets(growingDegreeDaysByMonth,"Year", degreeDaysByMonthOutputStream);
 
+	TjsWeather::YearAndMonthBuckets cumulativeGrowingDegreeDaysByMonth;
+	TjsWeather::accumulateCumulativeForYear(cumulativeGrowingDegreeDaysByMonth,growingDegreeDaysSeries);	
+	std::ofstream cumulativeDegreeDaysByMonthOutputStream("E:\\Tim\\Documents\\weather\\cumulativeDegreeDaysByMonth.txt");
+	TjsWeather::printBuckets(cumulativeGrowingDegreeDaysByMonth,"Year", cumulativeDegreeDaysByMonthOutputStream);
+    std::cout << "Growing Degree Days Processed: " << growingDegreeDaysSeries.size() << "\n\n";
+
+	std::string rainfallCsv{"\\rainfall\\ukcp09_gridded-land-obs-daily_timeseries_rainfall_350000E_350000N_19580101-20161231.csv"};
+	std::string rainfallPath{timeSeriesFolder+rainfallCsv};
+	std::ifstream rainfallStream{rainfallPath};
+    TjsWeather::MetOfficeTimeSeries rainfallSeries;
+	rainfallSeries.load(rainfallStream,377020,387175);
+    std::cout << "Rainfall temperature records found: " << rainfallSeries.size() << "\n";
+
+	TjsWeather::YearAndMonthBuckets rainfallByMonth;
+	TjsWeather::accumulate(rainfallByMonth,rainfallSeries);	
+	std::ofstream rainfallByMonthOutputStream("E:\\Tim\\Documents\\weather\\rainfallByMonth.txt");
+	TjsWeather::printBuckets(rainfallByMonth,"Year", rainfallByMonthOutputStream);
+    std::cout << "rainfall Processed:\n\n";
+	}
+	catch(std::exception e)
+	{
+		std::cout << "### Exception caught: " << e.what() << "\n";
+	}
 
     std::cout << "Farewell Weather World!\n";
 

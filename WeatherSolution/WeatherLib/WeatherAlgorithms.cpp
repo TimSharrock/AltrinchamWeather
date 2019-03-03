@@ -9,6 +9,21 @@ void TjsWeather::accumulate(YearAndMonthBuckets& buckets, MetOfficeTimeSeries co
 	}
 }
 
+void TjsWeather::accumulateCumulativeForYear(YearAndMonthBuckets& buckets, MetOfficeTimeSeries const& series)
+{
+	for (auto iter = series.begin(); iter != series.end(); ++iter)
+	{
+		auto month = iter->month();
+		do
+		{
+			buckets.value(iter->year(), month) += iter->value();
+			++month;
+		}
+		while(month != date::January);  // ie month has wrapped round....
+	}
+}
+
+
 void TjsWeather::printBuckets(const YearAndMonthBuckets& yearAndMonthBuckets, std::string const& title, std::ostream& stream)
 {
 	stream << "# " << title;
