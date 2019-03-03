@@ -12,9 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherStatisticsOne", "Wea
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherTest", "WeatherTest\WeatherTest.vcxproj", "{C83329B8-1DB8-417D-8E73-055FC09CC342}"
 EndProject
-<<<<<<< .merge_file_a21448
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherFileSystemTests", "WeatherFileSystemTests\WeatherFileSystemTests.vcxproj", "{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}"
-=======
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CatchTestsForWeatherLib", "CatchTestsForWeatherLib\CatchTestsForWeatherLib.vcxproj", "{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507} = {FFB56EBD-CF31-4536-A4FE-D1BF17C18507}
@@ -53,7 +52,6 @@ Global
 		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x64.Build.0 = Release|x64
 		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x86.ActiveCfg = Release|Win32
 		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x86.Build.0 = Release|Win32
-<<<<<<< .merge_file_a21448
 		{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}.Debug|x64.ActiveCfg = Debug|x64
 		{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}.Debug|x64.Build.0 = Debug|x64
 		{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}.Debug|x86.ActiveCfg = Debug|Win32
@@ -62,7 +60,6 @@ Global
 		{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}.Release|x64.Build.0 = Release|x64
 		{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}.Release|x86.ActiveCfg = Release|Win32
 		{F1BE1896-CCD7-4B68-9A0A-D5AF9B083A7C}.Release|x86.Build.0 = Release|Win32
-=======
 		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x64.ActiveCfg = Debug|x64
 		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x64.Build.0 = Debug|x64
 		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x86.ActiveCfg = Debug|Win32
