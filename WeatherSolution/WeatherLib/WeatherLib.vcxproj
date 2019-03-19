@@ -153,7 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CsvReader.h" />
+    <ClInclude Include="XsvReader.h" />
     <ClInclude Include="DayAndValue.h" />
     <ClInclude Include="DegreeDayCalculator.h" />
     <ClInclude Include="framework.h" />
@@ -165,7 +165,7 @@
     <ClInclude Include="YearAndMonthBuckets.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CsvReader.cpp" />
+    <ClCompile Include="XsvReader.cpp" />
     <ClCompile Include="DayAndValue.cpp" />
     <ClCompile Include="DegreeDayCalculator.cpp" />
     <ClCompile Include="HomeDataFolderReader.cpp" />

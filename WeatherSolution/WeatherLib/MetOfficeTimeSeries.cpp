@@ -2,7 +2,7 @@
 #include <cmath>
 #include <sstream>
 #include "MetOfficeTimeSeries.h"
-#include "CsvReader.h"
+#include "XsvReader.h"
 #include <immintrin.h>
 
 
@@ -28,7 +28,7 @@ bool TjsWeather::MetOfficeTimeSeries::coordinateIsIn5kmBlock(int const coordinat
 
 void TjsWeather::MetOfficeTimeSeries::load(std::istream& stream, int const easting, int const northing)
 {
-	CsvReader reader(stream);
+	XsvReader reader(stream);
 	// read the header, and find the appropriate column
 	auto eastingLine = reader.readLine();
 	if(eastingLine.size()<2u){throw std::invalid_argument("First line has too few fields (should start 'easting,')");}
