@@ -12,6 +12,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherStatisticsOne", "Wea
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherTest", "WeatherTest\WeatherTest.vcxproj", "{C83329B8-1DB8-417D-8E73-055FC09CC342}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CatchTestsForWeatherLib", "CatchTestsForWeatherLib\CatchTestsForWeatherLib.vcxproj", "{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507} = {FFB56EBD-CF31-4536-A4FE-D1BF17C18507}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -44,6 +49,14 @@ Global
 		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x64.Build.0 = Release|x64
 		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x86.ActiveCfg = Release|Win32
 		{C83329B8-1DB8-417D-8E73-055FC09CC342}.Release|x86.Build.0 = Release|Win32
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x64.ActiveCfg = Debug|x64
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x64.Build.0 = Debug|x64
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x86.ActiveCfg = Debug|Win32
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Debug|x86.Build.0 = Debug|Win32
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x64.ActiveCfg = Release|x64
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x64.Build.0 = Release|x64
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x86.ActiveCfg = Release|Win32
+		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
