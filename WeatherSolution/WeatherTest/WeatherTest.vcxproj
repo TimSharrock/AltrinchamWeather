@@ -36,7 +36,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CsvReaderTests.cpp" />
+    <ClCompile Include="XsvReaderTests.cpp" />
     <ClCompile Include="DayAndValueTests.cpp" />
     <ClCompile Include="DegreeDayCalculatorTest.cpp" />
     <ClCompile Include="MetOfficeTimeSeriesTests.cpp" />

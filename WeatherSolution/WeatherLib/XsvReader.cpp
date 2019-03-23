@@ -2,8 +2,8 @@
 #include "XsvReader.h"
 
 
-TjsWeather::XsvReader::XsvReader(std::istream& stream)
-	:myStream(stream)
+TjsWeather::XsvReader::XsvReader(std::istream& stream, char aSeparator)
+	:myStream(stream),mySeparator(aSeparator)
 {
 }
 
@@ -19,23 +19,25 @@ std::vector<std::string> TjsWeather::XsvReader::readLine() const
 	auto c = ' ';
 	while(myStream.get(c))
 	{
-		switch (c)
+		if(c=='\n')
 		{
-		case '\n':
 			// end of line, take the last field
 			result.push_back(aField);
 			return result;
-		case ',':
+		}
+		else if(c==mySeparator)
+		{
 			// end of field
 			result.push_back(aField);
 			aField.clear();
 			lineIsJustWhiteSpace = false;
-			break;
-		case ' ':
-		case '\t':
+		}
+		else if((c==' ')||(c=='\t'))
+		{
 			// simple whitespace, ignore
-			break;
-		default:
+		}
+		else
+		{
 			aField += c;
 			lineIsJustWhiteSpace = false;
 		}
