@@ -16,7 +16,8 @@ int main()
 
 	try
 	{
-		std::string timeSeriesFolder{ "E:\\Tim\\Documents\\weather\\MetOffice\\TimeSeries" };
+		std::string rootFolder{ "C:\\Users\\tim\\Dropbox\\Weather" };
+		std::string timeSeriesFolder{ rootFolder + "\\MetOffice\\TimeSeries" };
 		std::string minimumTemperatureCsv{ "\\minimum-temperature\\ukcp09_gridded-land-obs-daily_timeseries_minimum-temperature_350000E_350000N_19600101-20161231.csv" };
 
 		std::ifstream minimumTemperatureStream{ timeSeriesFolder + minimumTemperatureCsv };
@@ -24,7 +25,7 @@ int main()
 		minimumSeries.load(minimumTemperatureStream, 377020, 387175);
 		std::cout << "Minimum temperature records found: " << minimumSeries.size() << "\n";
 
-		std::ofstream outputStream("E:\\Tim\\Documents\\weather\\statisticsOne.txt");
+		std::ofstream outputStream(rootFolder + "\\statisticsOne.txt");
 		TjsWeather::printFrostStatistics(minimumSeries.begin(), minimumSeries.end(), outputStream);
 		std::cout << "Frost Statistics Processed.\n\n";
 
@@ -37,12 +38,12 @@ int main()
 		TjsWeather::MetOfficeTimeSeries growingDegreeDaysSeries(minimumSeries, maximumSeries, TjsWeather::GrowingDegreeDays);
 		TjsWeather::YearAndMonthBuckets growingDegreeDaysByMonth;
 		TjsWeather::accumulate(growingDegreeDaysByMonth, growingDegreeDaysSeries);
-		std::ofstream degreeDaysByMonthOutputStream("E:\\Tim\\Documents\\weather\\degreeDaysByMonth.txt");
+		std::ofstream degreeDaysByMonthOutputStream(rootFolder + "\\degreeDaysByMonth.txt");
 		TjsWeather::printBuckets(growingDegreeDaysByMonth, "Year", degreeDaysByMonthOutputStream);
 
 		TjsWeather::YearAndMonthBuckets cumulativeGrowingDegreeDaysByMonth;
 		TjsWeather::accumulateCumulativeForYear(cumulativeGrowingDegreeDaysByMonth, growingDegreeDaysSeries);
-		std::ofstream cumulativeDegreeDaysByMonthOutputStream("E:\\Tim\\Documents\\weather\\cumulativeDegreeDaysByMonth.txt");
+		std::ofstream cumulativeDegreeDaysByMonthOutputStream(rootFolder + "\\cumulativeDegreeDaysByMonth.txt");
 		TjsWeather::printBuckets(cumulativeGrowingDegreeDaysByMonth, "Year", cumulativeDegreeDaysByMonthOutputStream);
 		std::cout << "Growing Degree Days Processed: " << growingDegreeDaysSeries.size() << "\n\n";
 
@@ -55,11 +56,11 @@ int main()
 
 		TjsWeather::YearAndMonthBuckets rainfallByMonth;
 		TjsWeather::accumulate(rainfallByMonth, rainfallSeries);
-		std::ofstream rainfallByMonthOutputStream("E:\\Tim\\Documents\\weather\\rainfallByMonth.txt");
+		std::ofstream rainfallByMonthOutputStream{ rootFolder + "\\rainfallByMonth.txt" };
 		TjsWeather::printBuckets(rainfallByMonth, "Year", rainfallByMonthOutputStream);
 		std::cout << "rainfall Processed:\n\n";
 	}
-	catch (std::exception e)
+	catch (std::exception const& e)
 	{
 		std::cout << "### Exception caught: " << e.what() << "\n";
 	}
