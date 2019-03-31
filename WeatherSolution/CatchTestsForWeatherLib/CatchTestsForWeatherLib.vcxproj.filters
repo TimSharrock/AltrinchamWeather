@@ -21,5 +21,8 @@
     <ClCompile Include="DayAndValueCatchTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileSystemCharacterisationCatchTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
