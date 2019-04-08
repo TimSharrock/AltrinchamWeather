@@ -1,7 +1,7 @@
 #include <catch.hpp>
 
 #pragma warning(push)
-#pragma warning(disable:4251 4275)
+#pragma warning(disable:4251 4275 4996)
 #include <yaml-cpp/yaml.h>
 #pragma warning(pop)
 

@@ -24,6 +24,9 @@
     <ClCompile Include="FileSystemCharacterisationCatchTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HomeWeatherReadingsCatchTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="YamlCharacterisationCatchTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
