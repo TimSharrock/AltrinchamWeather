@@ -18,7 +18,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CatchTestsForWeatherLib", "
 	ProjectSection(ProjectDependencies) = postProject
 		{FFB56EBD-CF31-4536-A4FE-D1BF17C18507} = {FFB56EBD-CF31-4536-A4FE-D1BF17C18507}
 	EndProjectSection
->>>>>>> .merge_file_a16640
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RunConfigurations", "RunConfigurations", "{32F5D428-47E5-470C-9E51-719684BB5E92}"
+	ProjectSection(SolutionItems) = preProject
+		..\Run\LarixAltrincham.yaml = ..\Run\LarixAltrincham.yaml
+		..\Run\Sample.yaml = ..\Run\Sample.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,7 +73,6 @@ Global
 		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x64.Build.0 = Release|x64
 		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x86.ActiveCfg = Release|Win32
 		{A7E90474-A2E4-4045-9F7B-F00247D0DEA2}.Release|x86.Build.0 = Release|Win32
->>>>>>> .merge_file_a16640
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

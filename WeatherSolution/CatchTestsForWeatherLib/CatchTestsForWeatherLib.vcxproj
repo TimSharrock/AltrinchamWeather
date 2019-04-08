@@ -127,6 +127,7 @@
     <ClCompile Include="CatchProgram.cpp" />
     <ClCompile Include="DayAndValueCatchTests.cpp" />
     <ClCompile Include="FileSystemCharacterisationCatchTests.cpp" />
+    <ClCompile Include="YamlCharacterisationCatchTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeatherLib\WeatherLib.vcxproj">
