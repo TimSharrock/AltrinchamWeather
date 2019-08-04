@@ -9,11 +9,12 @@
 #include <yaml-cpp/yaml.h>
 #pragma warning(pop)
 
-#include "../WeatherLib/MetOfficeTimeSeries.h"
+#include "../WeatherLib/DaySeries.h"
 #include "../WeatherLib/FrostStatistics.h"
 #include "../WeatherLib/DegreeDayCalculator.h"
 #include "../WeatherLib/YearAndMonthBuckets.h"
 #include "../WeatherLib/WeatherAlgorithms.h"
+#include "../WeatherLib/DataReaderFunctions.h"
 
 template<typename T>
 T getConfigValue(const YAML::Node& node, const char* key)
@@ -53,8 +54,7 @@ int main(int argc, char *argv[])
       auto rainfallCsvPath{ getConfigValue<std::string>(metOfficeNode,"Rainfall") };
 
       std::ifstream minimumTemperatureStream{minimumTemperatureCsvPath };
-      TjsWeather::MetOfficeTimeSeries minimumSeries;
-      minimumSeries.load(minimumTemperatureStream, easting, northing);
+      TjsWeather::DaySeries minimumSeries = TjsWeather::loadFromMetOfficeGriddedData(minimumTemperatureStream, easting, northing);
       std::cout << "Minimum temperature records found: " << minimumSeries.size() << "\n";
 
       std::ofstream outputStream(outputFolder + "\\statisticsOne.txt");
@@ -62,11 +62,10 @@ int main(int argc, char *argv[])
       std::cout << "Frost Statistics Processed.\n\n";
 
       std::ifstream maximumTemperatureStream{ maximumTemperatureCsvPath };
-      TjsWeather::MetOfficeTimeSeries maximumSeries;
-      maximumSeries.load(maximumTemperatureStream, easting, northing);
+      TjsWeather::DaySeries maximumSeries = TjsWeather::loadFromMetOfficeGriddedData(maximumTemperatureStream, easting, northing);
       std::cout << "Maximum temperature records found: " << maximumSeries.size() << "\n";
 
-      TjsWeather::MetOfficeTimeSeries growingDegreeDaysSeries(minimumSeries, maximumSeries, TjsWeather::GrowingDegreeDays);
+      TjsWeather::DaySeries growingDegreeDaysSeries=combine(minimumSeries, maximumSeries, TjsWeather::GrowingDegreeDays);
       TjsWeather::YearAndMonthBuckets growingDegreeDaysByMonth;
       TjsWeather::accumulate(growingDegreeDaysByMonth, growingDegreeDaysSeries);
       std::ofstream degreeDaysByMonthOutputStream(outputFolder + "\\degreeDaysByMonth.txt");
@@ -79,8 +78,7 @@ int main(int argc, char *argv[])
       std::cout << "Growing Degree Days Processed: " << growingDegreeDaysSeries.size() << "\n\n";
 
       std::ifstream rainfallStream{ rainfallCsvPath };
-      TjsWeather::MetOfficeTimeSeries rainfallSeries;
-      rainfallSeries.load(rainfallStream, easting, northing);
+      TjsWeather::DaySeries rainfallSeries = TjsWeather::loadFromMetOfficeGriddedData(rainfallStream, easting, northing);
       std::cout << "Rainfall temperature records found: " << rainfallSeries.size() << "\n";
 
       TjsWeather::YearAndMonthBuckets rainfallByMonth;

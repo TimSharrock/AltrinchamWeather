@@ -1,22 +1,22 @@
 #include "pch.h"
 #include <cmath>
 #include <sstream>
-#include "MetOfficeTimeSeries.h"
+#include "DaySeries.h"
 #include "XsvReader.h"
 #include <immintrin.h>
 
 
-std::vector<TjsWeather::DayAndValue>::const_iterator TjsWeather::MetOfficeTimeSeries::begin() const
+std::vector<TjsWeather::DayAndValue>::const_iterator TjsWeather::DaySeries::begin() const
 {
 	return myData.cbegin();
 }
 
-std::vector<TjsWeather::DayAndValue>::const_iterator TjsWeather::MetOfficeTimeSeries::end() const
+std::vector<TjsWeather::DayAndValue>::const_iterator TjsWeather::DaySeries::end() const
 {
 	return myData.cend();
 }
 
-bool TjsWeather::MetOfficeTimeSeries::coordinateIsIn5kmBlock(int const coordinate, std::string const& blockCentreCoordinateAsString)
+bool TjsWeather::DaySeries::coordinateIsIn5kmBlock(int const coordinate, std::string const& blockCentreCoordinateAsString)
 {
 	// assume numbers are in metres, on the block-boundary accept either
 	std::istringstream stream(blockCentreCoordinateAsString);
@@ -26,7 +26,7 @@ bool TjsWeather::MetOfficeTimeSeries::coordinateIsIn5kmBlock(int const coordinat
 	return std::abs(coordinate - blockCentreCoordinate) <= halfBlockSize;
 }
 
-void TjsWeather::MetOfficeTimeSeries::load(std::istream& stream, int const easting, int const northing)
+void TjsWeather::DaySeries::load(std::istream& stream, int const easting, int const northing)
 {
 	XsvReader reader(stream);
 	// read the header, and find the appropriate column
@@ -63,7 +63,7 @@ void TjsWeather::MetOfficeTimeSeries::load(std::istream& stream, int const easti
 	}
 }
 
-size_t TjsWeather::MetOfficeTimeSeries::size() const
+size_t TjsWeather::DaySeries::size() const
 {
 	return myData.size();
 }
