@@ -21,6 +21,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CatchTestsForWeatherLib", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RunConfigurations", "RunConfigurations", "{32F5D428-47E5-470C-9E51-719684BB5E92}"
 	ProjectSection(SolutionItems) = preProject
+		CatchTestsForWeatherLib\DayAndValueCatchTests.cpp = CatchTestsForWeatherLib\DayAndValueCatchTests.cpp
 		..\Run\LarixAltrincham.yaml = ..\Run\LarixAltrincham.yaml
 		..\Run\Sample.yaml = ..\Run\Sample.yaml
 	EndProjectSection
