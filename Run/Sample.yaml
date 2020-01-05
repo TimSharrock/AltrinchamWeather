@@ -1,0 +1,24 @@
+# File and Geographic Locations for Home
+---
+   Tag: Altrincham 
+   Easting: 377000
+   Northing: 387000
+   OutputFolder: <XXXXX>\AltrinchamWeather\Run\Output
+   MetOfficeFiles: 
+      MaximumTemperature: <YYYYY>\TimeSeries\maximum-temperature\ukcp09_gridded-land-obs-daily_timeseries_maximum-temperature_350000E_350000N_19600101-20161231.csv
+      MinimumTemperature: <YYYYY>\TimeSeries\minimum-temperature\ukcp09_gridded-land-obs-daily_timeseries_minimum-temperature_350000E_350000N_19600101-20161231.csv
+      Rainfall: <YYYYY>\TimeSeries\rainfall\ukcp09_gridded-land-obs-daily_timeseries_rainfall_350000E_350000N_19580101-20161231.csv
+   WeatherHubFolders:
+      GreenHouseA: 
+         Type: Thermometer
+         Folder: <XXXXX>\AltrinchamWeather\HomeWeatherData\GreenHouseA
+      BackGardenB:
+         Type: Thermometer
+         Folder: <XXXXX>\AltrinchamWeather\HomeWeatherData\BackGardenB
+      FrontGardenC:
+         Type: Thermometer
+         Folder: <XXXXX>\AltrinchamWeather\HomeWeatherData\FrontGardenC
+      VictoriaRoad:
+         Type: WeatherStation
+         Folder: <XXXXX>\AltrinchamWeather\HomeWeatherData\WeatherStation
+...

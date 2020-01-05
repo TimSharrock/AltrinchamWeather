@@ -45,6 +45,9 @@
     <ClInclude Include="XsvReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HomeWeatherReadings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="XsvReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeWeatherReadings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
