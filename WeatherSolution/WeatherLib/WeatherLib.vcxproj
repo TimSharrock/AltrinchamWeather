@@ -158,24 +158,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="HomeWeatherReadings.h" />
+    <ClInclude Include="DataReaderFunctions.h" />
     <ClInclude Include="XsvReader.h" />
     <ClInclude Include="DayAndValue.h" />
     <ClInclude Include="DegreeDayCalculator.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FrostStatistics.h" />
     <ClInclude Include="HomeDataFolderReader.h" />
-    <ClInclude Include="MetOfficeTimeSeries.h" />
+    <ClInclude Include="DaySeries.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="WeatherAlgorithms.h" />
     <ClInclude Include="YearAndMonthBuckets.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HomeWeatherReadings.cpp" />
+    <ClCompile Include="DataReaderFunctions.cpp" />
     <ClCompile Include="XsvReader.cpp" />
     <ClCompile Include="DayAndValue.cpp" />
     <ClCompile Include="DegreeDayCalculator.cpp" />
     <ClCompile Include="HomeDataFolderReader.cpp" />
-    <ClCompile Include="MetOfficeTimeSeries.cpp" />
+    <ClCompile Include="DaySeries.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

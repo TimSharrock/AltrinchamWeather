@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "WeatherAlgorithms.h"
 
-void TjsWeather::accumulate(YearAndMonthBuckets& buckets, MetOfficeTimeSeries const& series)
+void TjsWeather::accumulate(YearAndMonthBuckets& buckets, DaySeries const& series)
 {
 	for (auto iter = series.begin(); iter != series.end(); ++iter)
 	{
@@ -9,7 +9,7 @@ void TjsWeather::accumulate(YearAndMonthBuckets& buckets, MetOfficeTimeSeries co
 	}
 }
 
-void TjsWeather::accumulateCumulativeForYear(YearAndMonthBuckets& buckets, MetOfficeTimeSeries const& series)
+void TjsWeather::accumulateCumulativeForYear(YearAndMonthBuckets& buckets, DaySeries const& series)
 {
 	for (auto iter = series.begin(); iter != series.end(); ++iter)
 	{
