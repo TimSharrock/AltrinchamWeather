@@ -1,11 +1,11 @@
 #include "pch.h"
 #include "HomeDataFolderReader.h"
 #include <filesystem>
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 TjsWeather::HomeDataFolderReader::HomeDataFolderReader()
 {
-	//std::experimental::filesystem::directory_iterator it;
+	//std::filesystem::directory_iterator it;
 	 //for(auto& p: std::filesystem::directory_iterator("sandbox"))
 	 {
 		 

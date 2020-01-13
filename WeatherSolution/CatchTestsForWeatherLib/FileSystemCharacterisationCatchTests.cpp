@@ -1,9 +1,9 @@
 #include <catch.hpp>
-#include <experimental/filesystem>
+#include <filesystem>
 #include <algorithm>
 #include <iterator>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 TEST_CASE("C++ std filesystem availability","[filesystem]")
 {
